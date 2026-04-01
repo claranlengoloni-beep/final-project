@@ -65,6 +65,53 @@ table.luxury-table tr:hover {
     display: flex;
     gap: 30px;
 }
+/* --- Contact Form Styling --- */
+.luxury-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--gold);
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    border: 1px solid #333;
+    color: #fff;
+    font-family: inherit;
+    border-radius: 4px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--gold);
+    outline: none;
+}
+
+.submit-btn {
+    background-color: var(--gold);
+    color: #000;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #b8972f;
+}
 
 .main-content { flex: 3; }
 .sidebar { flex: 1; }
