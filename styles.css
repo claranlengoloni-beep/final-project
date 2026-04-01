@@ -1,0 +1,162 @@
+/* --- Assignment 5 Requirement 10: Aesthetics (Luxury Colours) --- */
+:root {
+    --bg-color: #0d0d0d; /* Rich deep black */
+    --accent-color: #c4a77d; /* Classy gold */
+    --text-primary: #ffffff; /* White text for contrast */
+    --text-secondary: #aaaaaa; /* Soft grey text */
+    --menu-bg: #1a1a1a; /* Slightly lighter black for containers */
+}
+
+/* --- Basic Styling & Requirements 4: Background Styling --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', serif; /* Classic font choice */
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Container to center content on large screens */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Requirement 6: Menu Bar --- */
+nav {
+    background-color: var(--menu-bg);
+    border-bottom: 2px solid var(--accent-color);
+    position: sticky; /* Keep the menu at the top */
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect on menu items */
+nav ul li a:hover {
+    color: var(--text-primary);
+    background-color: var(--accent-color);
+}
+
+/* Header image/banner styling */
+.header-banner {
+    width: 100%;
+    height: 300px;
+    background-image: url('https://placehold.co/1200x300/1a1a1a/c4a77d?text=LUXURY+ESTATES'); /* Replace with your own image later */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* --- Requirement 1: At least 2 columns (using CSS Grid) --- */
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two columns: Main Content (2 parts) and Sidebar (1 part) */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.main-column {
+    /* Main column content here */
+}
+
+.sidebar-column {
+    background-color: var(--menu-bg);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* --- Requirement 2: Images/Videos in containers --- */
+.listing-container, .media-container {
+    background-color: var(--menu-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.listing-container img, .media-container video, .media-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* --- Requirement 3: Tables Full-length --- */
+table {
+    width: 100%; /* Full-length */
+    border-collapse: collapse;
+    margin: 20px 0;
+    color: var(--text-primary);
+}
+
+table th, table td {
+    border: 1px solid var(--accent-color);
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--menu-bg);
+    color: var(--accent-color);
+}
+
+/* --- Requirement 8: Formatted Paragraphs --- */
+.formatted-paragraph {
+    margin-bottom: 15px;
+    text-indent: 20px; /* Fancy indentation */
+    color: var(--text-secondary);
+}
+
+/* --- Requirement 5: List (nested) --- */
+.amenities-list ul {
+    list-style-type: square; /* Square bullet for nested list */
+    margin-left: 20px;
+}
+
+/* --- Requirement 11: Footer --- */
+footer {
+    background-color: var(--menu-bg);
+    border-top: 2px solid var(--accent-color);
+    padding: 30px;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
