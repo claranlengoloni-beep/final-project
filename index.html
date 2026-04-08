@@ -3,93 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lengo Luxury Estates | Home</title>
+    <title>Lengo Luxury Estates | Distinction & Excellence</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="Portfolio.html">Porfolio</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="media.html">Media</a>
+        <div class="logo">LENGO</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#listings">Luxury Listings</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
     </nav>
-    <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#listings">Luxury Listings</a></li>
-        <li><a href="#services">Our Services</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-    </ul>
-</nav>
 
-<section id="home">
-    <h1>Welcome to Lengo Luxury Estates</h1>
-</section>
-
-<section id="listings">
-    <h2>Featured Properties</h2>
-    </section>
-
-<section id="services">
-    <h2>Premium Services</h2>
-</section>
-
-<section id="contact">
-    <h2>Get In Touch</h2>
-</section>
-
-    <header class="hero-banner">
-        <h1>Lengo Luxury Estates</h1>
-        <p>Discretion • Distinction • Dedicated Excellence</p>
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Lengo Luxury Estates</h1>
+            <p class="tagline">Discretion • Distinction • Dedicated Excellence</p>
+            <p>At Lengo Luxury Estates, we do not simply sell properties; we curate experiences that define the pinnacle of sophistication.</p>
+            <a href="#listings" class="btn">Explore Portfolio</a>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="two-column">
+    <section id="listings" class="content-section">
+        <div class="container">
+            <h2>Featured Properties</h2>
+            <p>Explore our highly-curated listings of metropolitan penthouses, expansive coastal estates, and secluded mountain retreats. Your journey to redefined living begins here.</p>
             
-            <main class="main-content">
-                <h2 style="color: var(--gold);">Welcome to Aura Luxury Estates</h2>
-                
-                <p class="prose">At Lengo Luxury Estates, we do not simply sell properties; we curate experiences that define the pinnacle of sophistication. With a global portfolio of the most exclusive residences, we invite you to explore a world where architectural artistry meets unprecedented comfort.</p>
-                
-                <p class="prose">Our commitment to discretion and personalized service ensures that every transaction is as flawless as the properties themselves. Discover a dedicated partner in your pursuit of exceptional living.</p>
-                
-                <p class="prose">Explore our highly-curated listings of metropolitan penthouses, expansive coastal estates, and secluded mountain retreats. Your journey to redefined living begins here.</p>
-                
-                <h3 style="color: var(--gold); margin-top: 20px;">Our Promise</h3>
-                <p class="prose">We pledge to uphold the highest standards of the real estate industry. Our promise is built on three pillars: Discretion in every deal, Distinction in every property we list, and Dedicated Excellence for every client we serve.</p>
-                
-                <p class="prose">Whether you are looking for an investment in the heart of Nairobi or a getaway on the coast, our experts provide the local knowledge and global reach necessary to secure your legacy.</p>
-            </main>
-
-            <aside class="sidebar">
-                <div class="card">
-                    <h3>Get In Touch</h3>
-                    <p style="font-size: 0.9rem; color: var(--gold);">Our Nairobi Office</p>
-                    <p style="font-size: 0.85rem; margin-bottom: 15px;">Visit us at our main branch located in Upper Hill, Nairobi. Our team is available Monday to Friday, 8:00 AM to 5:00 PM.</p>
-                    
-                    <p style="font-size: 0.85rem;"><strong>Phone:</strong> +254 700 123 456<br>
-                    <strong>Email:</strong> info@lengo-realestate.co.ke</p>
-                    
-                    <a href="https://maps.google.com" class="cta-link">Click to open in Google Maps</a>
-                    
-                    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #333;">
-                    
-                    <h4>Send an Inquiry</h4>
-                    <form>
-                        <input type="text" placeholder="Name" style="width:100%; padding:8px; margin:5px 0; background:#000; border:1px solid #444; color:white;">
-                        <button type="submit" style="width:100%; background:var(--gold); border:none; padding:10px; cursor:pointer; font-weight:bold;">Submit Message</button>
-                    </form>
-                </div>
-            </aside>
+            <div class="property-grid">
+                <div class="property-card">Metropolitan Penthouses</div>
+                <div class="property-card">Coastal Estates</div>
+                <div class="property-card">Mountain Retreats</div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="services" class="content-section bg-light">
+        <div class="container">
+            <h2>Our Promise</h2>
+            <p>We pledge to uphold the highest standards of the real estate industry. Our promise is built on three pillars: <strong>Discretion</strong> in every deal, <strong>Distinction</strong> in every property, and <strong>Dedicated Excellence</strong>.</p>
+            <p>Whether you are looking for an investment in the heart of Nairobi or a getaway on the coast, our experts provide local knowledge and global reach.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-flex">
+                <div class="contact-info">
+                    <h3>Our Nairobi Office</h3>
+                    <p>Upper Hill, Nairobi</p>
+                    <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                    <p><strong>Phone:</strong> +254 700 123 456</p>
+                    <p><strong>Email:</strong> info@lengo-realestate.co.ke</p>
+                    <a href="#" class="map-link">Click to open in Google Maps</a>
+                </div>
+                <div class="contact-form">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea placeholder="Your Message"></textarea>
+                    <button class="btn">Submit Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>Daystar University Web Development Project</p>
-        <p>© 2026 Clara Lengoloni. All Rights Reserved.</p>
+        <p>&copy; 2026 Clara Lengoloni. All Rights Reserved.</p>
     </footer>
 
 </body>
 </html>
+       
+
+   
+                
+
