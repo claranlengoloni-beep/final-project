@@ -1,47 +1,122 @@
-/* Add this to your style.css file to get the Luxury Look */
-body {
-    background-color: #0a0a0a; /* Deep Black Background */
-    color: #ffffff;           /* White Text */
-    font-family: 'Georgia', serif;
+/* --- 1. Variables & Global Reset --- */
+:root {
+    --gold: #c5a059;       /* Primary Branding Gold */
+    --accent-gold: #d4af37; /* Brighter Gold for borders */
+    --deep-black: #0a0a0a;  /* Background */
+    --dark-grey: #1a1a1a;   /* Card Backgrounds */
+    --white: #ffffff;
+    --text-grey: #cccccc;
+}
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.navbar {
-    background: #1a1a1a;
-    border-bottom: 2px solid #d4af37; /* Gold Border */
-    padding: 20px;
-    text-align: center;
+html {
+    scroll-behavior: smooth; /* Essential for your single-page layout */
 }
 
-.navbar a {
-    color: #d4af37; /* Gold Menu Links */
+body {
+    background-color: var(--deep-black);
+    color: var(--white);
+    font-family: 'Montserrat', 'Georgia', serif; /* Modern but elegant */
+    line-height: 1.6;
+}
+
+/* --- 2. Sticky Navigation --- */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--dark-grey);
+    border-bottom: 2px solid var(--accent-gold);
+    padding: 20px 5%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+nav a {
+    color: var(--gold);
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: 0.3s ease;
 }
 
-.two-column {
-    display: flex; /* This makes it look like a website layout */
-    gap: 40px;
-    max-width: 1100px;
-    margin: 40px auto;
+nav a:hover {
+    color: var(--white);
 }
 
-.card {
-    background: #1a1a1a;
-    border: 1px solid #d4af37;
-    padding: 20px;
+/* --- 3. Section Layout --- */
+section {
+    min-height: 100vh;
+    padding: 100px 5%; /* Top padding ensures titles aren't hidden by nav */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-   /* --- Table Styling for Requirement 3 --- */
-table.luxury-table {
-    width: 100%; /* Makes it Full-length */
-    border-collapse: collapse;
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-align: center;
     margin-bottom: 30px;
+}
+
+h1 { font-size: 3.5rem; text-transform: uppercase; }
+h2 { font-size: 2.5rem; }
+
+/* --- 4. Content Grids (Properties & Media) --- */
+/* Works for both your Featured Properties and your Media/Gallery */
+.property-grid, .image-grid, .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.card, .property-card {
+    background: var(--dark-grey);
+    border: 1px solid var(--accent-gold);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+.card:hover, .property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
+}
+
+.image-container img, .image-grid img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: 0.5s ease;
+}
+
+.image-grid img:hover {
+    filter: grayscale(0%);
+}
+
+/* --- 5. Luxury Table (Requirement 3) --- */
+.luxury-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
     background: var(--dark-grey);
     border: 1px solid #333;
 }
 
-table.luxury-table th {
+.luxury-table th {
     background-color: var(--gold);
     color: #000;
     padding: 15px;
@@ -50,47 +125,42 @@ table.luxury-table th {
     font-size: 0.9rem;
 }
 
-table.luxury-table td {
+.luxury-table td {
     padding: 15px;
     border-bottom: 1px solid #333;
-    color: #ccc;
+    color: var(--text-grey);
 }
 
-table.luxury-table tr:hover {
-    background-color: #222; /* Adds a subtle hover effect */
+.luxury-table tr:hover {
+    background-color: #222;
 }
 
-/* Ensure the layout stays in 2 columns */
-.two-column {
-    display: flex;
-    gap: 30px;
-}
-/* --- Contact Form Styling --- */
+/* --- 6. Contact Form --- */
 .luxury-form {
-    display: flex;
-    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
     color: var(--gold);
     font-size: 0.8rem;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     background-color: #000;
     border: 1px solid #333;
     color: #fff;
     font-family: inherit;
-    border-radius: 4px;
 }
 
 .form-group input:focus, .form-group textarea:focus {
@@ -99,198 +169,38 @@ table.luxury-table tr:hover {
 }
 
 .submit-btn {
+    width: 100%;
     background-color: var(--gold);
     color: #000;
     border: none;
-    padding: 15px;
+    padding: 18px;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .submit-btn:hover {
     background-color: #b8972f;
 }
-:root {
-    --gold: #c5a059;
-    --dark: #1a1a1a;
-    --light: #f4f4f4;
-}
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    background-color: white;
-    color: var(--dark);
-    line-height: 1.6;
-}
-
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: var(--dark);
-    color: white;
-}
-
-h1 {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    color: var(--gold);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-}
-
-h2 {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin: 50px 0;
-}
-
-/* Property Cards */
-.property-grid {
+/* --- 7. Utility Classes --- */
+.two-column {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 0 5%;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
-.property-card {
-    flex: 1;
-    min-width: 350px;
-    max-width: 500px;
-    background: var(--light);
-    border-bottom: 4px solid var(--gold);
-    transition: transform 0.3s ease;
-}
+.main-content { flex: 3; min-width: 300px; }
+.sidebar { flex: 1; min-width: 250px; }
 
-.property-card:hover {
-    transform: translateY(-10px);
-}
+.gold-text { color: var(--gold); }
+.dark-bg { background-color: #111; }
 
-.image-container img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.property-info {
-    padding: 25px;
-}
-
-.property-info h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--dark);
-}
-
-/* Amenities Section */
-.amenities {
-    background-color: var(--dark);
-    color: white;
-    padding: 60px 10%;
-    margin-top: 50px;
-}
-
-.amenities h2 {
-    color: var(--gold);
-}
-
-.amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    text-align: center;
-}
-
-.amenity-item h4 {
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-}
-
-.main-content { flex: 3; }
-.sidebar { flex: 1; }
-
-/* Media Page Styles */
-.media-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background: #1a1a1a;
-    color: white;
-}
-
-.media-nav a {
-    color: #c5a059;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.gallery-section {
-    padding: 60px 5%;
-    text-align: center;
-}
-
-.dark-bg {
-    background-color: #111;
-}
-
-.category-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 40px;
-}
-
-.gold-text { color: #c5a059; }
-
-/* 5-Column Image Grid */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.image-grid img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    filter: grayscale(30%);
-    transition: 0.4s;
-}
-
-.image-grid img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02);
-}
-
-/* Video Grid */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
+/* Video Responsiveness */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
 }
@@ -301,22 +211,13 @@ li {
     left: 0;
     width: 100%;
     height: 100%;
-    border: 2px solid #c5a059;
-}
-html {
-    scroll-behavior: smooth;
+    border: 2px solid var(--gold);
 }
 
-section {
-    min-height: 100vh; /* This makes each section fill the screen */
-    padding: 60px;
-}
-nav {
-    position: sticky;
-    top: 0;
-    background-color: #ffffff; 
-    z-index: 1000; /* Keeps it above the images */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-   
 
+ 
+
+
+
+
+ 
