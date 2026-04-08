@@ -112,8 +112,196 @@ table.luxury-table tr:hover {
 .submit-btn:hover {
     background-color: #b8972f;
 }
+:root {
+    --gold: #c5a059;
+    --dark: #1a1a1a;
+    --light: #f4f4f4;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: white;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--dark);
+    color: white;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 50px 0;
+}
+
+/* Property Cards */
+.property-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 5%;
+    flex-wrap: wrap;
+}
+
+.property-card {
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+    background: var(--light);
+    border-bottom: 4px solid var(--gold);
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+}
+
+.image-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.property-info {
+    padding: 25px;
+}
+
+.property-info h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+}
+
+/* Amenities Section */
+.amenities {
+    background-color: var(--dark);
+    color: white;
+    padding: 60px 10%;
+    margin-top: 50px;
+}
+
+.amenities h2 {
+    color: var(--gold);
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.amenity-item h4 {
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
 
 .main-content { flex: 3; }
 .sidebar { flex: 1; }
+
+/* Media Page Styles */
+.media-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #1a1a1a;
+    color: white;
+}
+
+.media-nav a {
+    color: #c5a059;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.gallery-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.dark-bg {
+    background-color: #111;
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.gold-text { color: #c5a059; }
+
+/* 5-Column Image Grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: 0.4s;
+}
+
+.image-grid img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #c5a059;
+}
    
 
